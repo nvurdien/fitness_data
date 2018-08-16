@@ -9,14 +9,14 @@ const highchartOptions = {
         type: 'bar'
     },
     title: {
-        text: 'Fruit Consumption'
+        text: 'Calorie Data'
     },
     xAxis: {
-        categories: ['Apples', 'Bananas', 'Oranges']
+        categories: ['Breakfast', 'Lunch', 'Dinner']
     },
     yAxis: {
         title: {
-            text: 'Fruit eaten'
+            text: ''
         }
     },
     series: [{
