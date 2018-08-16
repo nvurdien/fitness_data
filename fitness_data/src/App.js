@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReactHighcharts from'react-highcharts'; // Expects that Highcharts was loaded in the code.
+
+
+const highchartOptions = {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Fruit Consumption'
+    },
+    xAxis: {
+        categories: ['Apples', 'Bananas', 'Oranges']
+    },
+    yAxis: {
+        title: {
+            text: 'Fruit eaten'
+        }
+    },
+    series: [{
+        name: 'Jane',
+        data: [1, 0, 4]
+    }, {
+        name: 'John',
+        data: [5, 7, 3]
+    }]
+};
+
 
 class App extends Component {
   render() {
@@ -11,7 +38,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+            <ReactHighcharts config={highchartOptions} />
         </p>
       </div>
     );
