@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -16,10 +15,20 @@
 
 .App-title {
   font-size: 1.5em;
+  letter-spacing: 1em;
 }
 
 .App-intro {
   font-size: large;
+  letter-spacing: 0.1em;
+}
+
+.row {
+  margin: 5% 0px 0px 0px !important;
+}
+
+tspan {
+  font-family: inherit;
 }
 
 @keyframes App-logo-spin {
