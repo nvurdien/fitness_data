@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ReactHighcharts from'react-highcharts'; // Expects that Highcharts was loaded in the code.
 
-var json = [
+let json = [
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"6","Calories_Consumed":"2195","Exercise_Calories_Burned":"600","Date":"2017-10-11"},
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"128","Hours_Sleep":"8","Calories_Consumed":"1676","Exercise_Calories_Burned":"876","Date":"2017-09-05"},
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"128","Hours_Sleep":"7","Calories_Consumed":"1728","Exercise_Calories_Burned":"971","Date":"2017-10-19"},
@@ -29,15 +29,15 @@ var json = [
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"128","Hours_Sleep":"8","Calories_Consumed":"1842","Exercise_Calories_Burned":"818","Date":"2017-10-07"},
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"2106","Exercise_Calories_Burned":"415","Date":"2017-09-16"},
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"129","Hours_Sleep":"7","Calories_Consumed":"1971","Exercise_Calories_Burned":"433","Date":"2017-10-19"}
-]
+];
 
-// var parsed_json = JSON.parse(json);
+// let parsed_json = JSON.parse(json);
 
-var calories_retained = []
-var calories_burned = []
-var categories = []
+let calories_retained = [];
+let calories_burned = [];
+let categories = [];
 
-for (var i = 0; i < json.length; i++) {
+for (let i = 0; i < json.length; i++) {
     console.log(json[i]);
     calories_retained.push(json[i].Calories_Consumed - json[i].Exercise_Calories_Burned);
     console.log(calories_retained);
@@ -58,7 +58,10 @@ const highchartOptions = {
     },
 
     xAxis: {
-        categories: categories
+        categories: categories,
+        title: {
+            text: 'Day of the Month'
+        }
     },
 
     yAxis: {
