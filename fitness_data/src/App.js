@@ -11,23 +11,23 @@ var json = [
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"2182","Exercise_Calories_Burned":"317","Date":"2017-09-23", "Step_Count":1500},
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"128","Hours_Sleep":"6","Calories_Consumed":"1952","Exercise_Calories_Burned":"629","Date":"2017-10-18", "Step_Count":1000},
     {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"5","Calories_Consumed":"1894","Exercise_Calories_Burned":"787","Date":"2017-10-07", "Step_Count":190},
-    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"9","Calories_Consumed":"2322","Exercise_Calories_Burned":"787","Date":"2017-10-23", "Step_Count":1000},
-    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"6","Calories_Consumed":"2108","Exercise_Calories_Burned":"989","Date":"2017-09-15", "Step_Count":1000},
-    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"6","Calories_Consumed":"2373","Exercise_Calories_Burned":"442","Date":"2017-09-19", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"2501","Exercise_Calories_Burned":"990","Date":"2017-09-11", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"2014","Exercise_Calories_Burned":"842","Date":"2017-09-03", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"1995","Exercise_Calories_Burned":"959","Date":"2017-09-07", "Step_Count":1000},
+    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"9","Calories_Consumed":"2322","Exercise_Calories_Burned":"787","Date":"2017-10-23", "Step_Count":290},
+    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"6","Calories_Consumed":"2108","Exercise_Calories_Burned":"989","Date":"2017-09-15", "Step_Count":600},
+    {"Member_ID":"901870","First_Name":"Lois","Last_Name":"Griffin","Gender":"F","Age":"47","Height":"52","Weight":"127","Hours_Sleep":"6","Calories_Consumed":"2373","Exercise_Calories_Burned":"442","Date":"2017-09-19", "Step_Count":1009},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"2501","Exercise_Calories_Burned":"990","Date":"2017-09-11", "Step_Count":590},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"2014","Exercise_Calories_Burned":"842","Date":"2017-09-03", "Step_Count":490},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"1995","Exercise_Calories_Burned":"959","Date":"2017-09-07", "Step_Count":780},
     {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"1872","Exercise_Calories_Burned":"718","Date":"2017-10-07", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"2197","Exercise_Calories_Burned":"772","Date":"2017-09-28", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"1949","Exercise_Calories_Burned":"802","Date":"2017-09-09", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"1756","Exercise_Calories_Burned":"436","Date":"2017-10-06", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"129","Hours_Sleep":"7","Calories_Consumed":"2060","Exercise_Calories_Burned":"711","Date":"2017-09-01", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"5","Calories_Consumed":"2229","Exercise_Calories_Burned":"727","Date":"2017-10-04", "Step_Count":1000},
-    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"1674","Exercise_Calories_Burned":"541","Date":"2017-09-15", "Step_Count":1000},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"2197","Exercise_Calories_Burned":"772","Date":"2017-09-28", "Step_Count":1200},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"8","Calories_Consumed":"1949","Exercise_Calories_Burned":"802","Date":"2017-09-09", "Step_Count":1100},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"1756","Exercise_Calories_Burned":"436","Date":"2017-10-06", "Step_Count":900},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"129","Hours_Sleep":"7","Calories_Consumed":"2060","Exercise_Calories_Burned":"711","Date":"2017-09-01", "Step_Count":2000},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"5","Calories_Consumed":"2229","Exercise_Calories_Burned":"727","Date":"2017-10-04", "Step_Count":800},
+    {"Member_ID":"926494","First_Name":"Corissa","Last_Name":"Aguiler","Gender":"F","Age":"39","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"1674","Exercise_Calories_Burned":"541","Date":"2017-09-15", "Step_Count":600},
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"128","Hours_Sleep":"9","Calories_Consumed":"1810","Exercise_Calories_Burned":"425","Date":"2017-10-18", "Step_Count":1000},
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"128","Hours_Sleep":"7","Calories_Consumed":"2373","Exercise_Calories_Burned":"516","Date":"2017-09-02", "Step_Count":1000},
-    {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"128","Hours_Sleep":"8","Calories_Consumed":"1842","Exercise_Calories_Burned":"818","Date":"2017-10-07", "Step_Count":1000},
-    {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"2106","Exercise_Calories_Burned":"415","Date":"2017-09-16", "Step_Count":1000},
+    {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"128","Hours_Sleep":"8","Calories_Consumed":"1842","Exercise_Calories_Burned":"818","Date":"2017-10-07", "Step_Count":1500},
+    {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"130","Hours_Sleep":"7","Calories_Consumed":"2106","Exercise_Calories_Burned":"415","Date":"2017-09-16", "Step_Count":700},
     {"Member_ID":"441804","First_Name":"Olga","Last_Name":"Keig","Gender":"F","Age":"52","Height":"53","Weight":"129","Hours_Sleep":"7","Calories_Consumed":"1971","Exercise_Calories_Burned":"433","Date":"2017-10-19", "Step_Count":1000}
 ]
 
@@ -59,7 +59,7 @@ const highchartOptions = {
         href: " "
     },
     title: {
-        text: ''
+        text: 'Calorie Intake Over Time'
     },
 
     xAxis: {
@@ -118,7 +118,10 @@ const highchartOptions1 = {
                 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
     },
     xAxis: {
-        categories: categories
+        categories: categories,
+        title: {
+            text: 'Day of the Month'
+        }
     },
     yAxis: {
         title: {
@@ -145,7 +148,7 @@ const highchartOptions1 = {
 
     series: [{
         type: 'area',
-        name: 'USD to EUR',
+        name: 'Step Count',
         data: step_count
     }]
 }
