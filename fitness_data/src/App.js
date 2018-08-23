@@ -160,11 +160,21 @@ class App extends Component {
           <h1 className="App-title">H E A L T H C A R E</h1>
         </header>
         <p className="App-intro text-center">
-            <div className='row d-flex justify-content-center'>
-              <ReactHighcharts config={highchartOptions} />
-            </div>
-            <div className='row d-flex justify-content-center'>
-              <ReactHighcharts config={highchartOptions1} />
+            <nav>
+                <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                       role="tab" aria-controls="nav-home" aria-selected="true">Calories</a>
+                    <a className="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                       role="tab" aria-controls="nav-profile" aria-selected="false">Step Count</a>
+                </div>
+            </nav>
+            <div className="tab-content row d-flex justify-content-center" id="nav-tabContent">
+                <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <ReactHighcharts config={highchartOptions} />
+                </div>
+                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <ReactHighcharts config={highchartOptions1} />
+                </div>
             </div>
         </p>
       </div>
