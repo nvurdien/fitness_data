@@ -1,48 +1,48 @@
 .App {
-  text-align: center;
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  text-align: center;
-}
-
-.App-header {
-  background-color: #333333;
-  height: 170px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-  margin-left: 1em;
-  margin-top: 0.5em;
-  letter-spacing: 0.5em;
-}
-
-.App-intro {
-  font-size: large;
-  letter-spacing: 0.1em;
-}
-
-.row {
-  margin: 5% 0px 0px 0px !important;
-}
-
-#highcharts-mmj0spw-0.highcharts-container {
-  width: 1200px !important;
-  height: 800px !important;
-}
-
-tspan {
-  font-family: inherit;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-
+    text-align: center;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #333333;
+    height: 170px;
+    padding: 10px;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-top: 0.5em;
+    letter-spacing: 0.75em;
+  }
+  
+  .App-intro {
+    font-size: large;
+    letter-spacing: 0.12em;
+  }
+  
+  .row {
+    margin: 2.5% 0px 0px 0px !important;
+  }
+  
+  a {
+    color: #333333 !important;
+  }
+  
+  a:hover {
+    color: #A4C8ED !important;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  
+  
+  

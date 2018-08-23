@@ -35,6 +35,7 @@ var calories_retained = []
 var calories_burned = []
 var categories = []
 var step_count = []
+var hours_sleep = []
 
 for (let i = 0; i < json.length; i++) {
     console.log(json[i]);
@@ -46,13 +47,18 @@ for (let i = 0; i < json.length; i++) {
     console.log(categories);
     step_count.push(json[i].Step_Count);
     console.log(step_count);
+    hours_sleep.push(json[i].Hours_Sleep/1);
+    console.log(hours_sleep);
 }
 
 const highchartOptions = {
     chart: {
         height: '45%',
         width: 1200,
-        type: 'column'
+        type: 'column',
+        style: {
+            fontFamily: 'Sans-serif'
+        }
     },
     credits: {
         text: " ",
@@ -153,6 +159,60 @@ const highchartOptions1 = {
     }]
 }
 
+const highchartOptions2 = {
+    colors: ['#434348'],
+    chart: {
+        height: '45%',
+        width: 1200,
+        zoomType: 'x'
+    },
+    credits: {
+        text: " ",
+        href: " "
+    },
+    title: {
+        text: 'Sleep Patterns'
+    },
+    subtitle: {
+        text: document.ontouchstart === undefined ?
+                'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+    },
+    xAxis: {
+        categories: categories,
+        title: {
+            text: 'Day of the Month'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Hours of Sleep'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        area: {
+            marker: {
+                radius: 2
+            },
+            lineWidth: 1,
+            states: {
+                hover: {
+                    lineWidth: 1
+                }
+            },
+            threshold: null
+        }
+    },
+
+    series: [{
+        type: 'area',
+        name: 'Hours',
+        data: hours_sleep
+    }]
+}
+
 
 class App extends Component {
   render() {
@@ -167,16 +227,21 @@ class App extends Component {
                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
                        role="tab" aria-controls="nav-home" aria-selected="true">Calories</a>
-                    <a className="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                       role="tab" aria-controls="nav-profile" aria-selected="false">Step Count</a>
+                    <a className="nav-item nav-link" id="nav-steps-tab" data-toggle="tab" href="#nav-steps"
+                       role="tab" aria-controls="nav-steps" aria-selected="false">Step Count</a>
+                    <a className="nav-item nav-link" id="nav-sleep-tab" data-toggle="tab" href="#nav-sleep"
+                       role="tab" aria-controls="nav-sleep" aria-selected="false">Sleep</a>
                 </div>
             </nav>
             <div className="tab-content row d-flex justify-content-center" id="nav-tabContent">
                 <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <ReactHighcharts config={highchartOptions} />
                 </div>
-                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div className="tab-pane fade" id="nav-steps" role="tabpanel" aria-labelledby="nav-steps-tab">
                     <ReactHighcharts config={highchartOptions1} />
+                </div>
+                <div className="tab-pane fade" id="nav-sleep" role="tabpanel" aria-labelledby="nav-sleep-tab">
+                    <ReactHighcharts config={highchartOptions2} />
                 </div>
             </div>
         </p>
