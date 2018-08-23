@@ -36,7 +36,7 @@ var calories_burned = []
 var categories = []
 var step_count = []
 
-for (var i = 0; i < json.length; i++) {
+for (let i = 0; i < json.length; i++) {
     console.log(json[i]);
     calories_retained.push(json[i].Calories_Consumed - json[i].Exercise_Calories_Burned);
     console.log(calories_retained);
@@ -63,7 +63,10 @@ const highchartOptions = {
     },
 
     xAxis: {
-        categories: categories
+        categories: categories,
+        title: {
+            text: 'Day of the Month'
+        }
     },
 
     yAxis: {
