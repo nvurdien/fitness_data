@@ -4,6 +4,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  text-align: center;
 }
 
 .App-header {
@@ -15,6 +16,7 @@
 
 .App-title {
   font-size: 1.5em;
+  margin-left: 1em;
   letter-spacing: 1em;
 }
 
@@ -27,6 +29,11 @@
   margin: 5% 0px 0px 0px !important;
 }
 
+#highcharts-mmj0spw-0.highcharts-container {
+  width: 1200px !important;
+  height: 800px !important;
+}
+
 tspan {
   font-family: inherit;
 }
@@ -35,3 +42,6 @@ tspan {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
