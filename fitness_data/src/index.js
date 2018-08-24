@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import jquery from 'jquery';
+import 'jquery';
 import 'bootstrap/js/dist/tab'
 
 ReactDOM.render(<App />, document.getElementById('root'));
