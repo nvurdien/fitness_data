@@ -28,6 +28,10 @@ class App extends Component {
         let categories = [];
         let step_count = [];
         let hours_sleep = [];
+        let avgSleep = 0;
+        let avgConsumed = 0;
+        let avgBurned = 0;
+        let avgStep = 0;
 
         data.forEach((day, i) => {
             // console.log(data[i]);
@@ -41,13 +45,27 @@ class App extends Component {
             // console.log(step_count);
             hours_sleep.push(data[i]["Hours_Sleep"] / 1);
             // console.log(hours_sleep);
+            avgSleep += data[i]["Hours_Sleep"];
+            avgConsumed += data[i]["Calories_Consumed"];
+            avgBurned += data[i]["Exercise_Calories_Burned"];
+            avgStep += data[i]["Step_Count"];
         });
+
+        avgSleep /= data.length;
+        avgConsumed /= data.length;
+        avgBurned /= data.length;
+        avgStep /= data.length;
 
         const highchartOptions = {
             chart: {
                 height: '45%',
                 width: 1200,
-                type: 'column'
+                type: 'column',
+                zoomType: 'x',
+                scrollablePlotArea: {
+                    minWidth: 600,
+                    scrollPositionX: 1
+                }
             },
             credits: {
                 text: " ",
@@ -60,7 +78,7 @@ class App extends Component {
             xAxis: {
                 categories: categories,
                 title: {
-                    text: 'Day'
+                    text: 'Month'
                 }
             },
 
@@ -94,6 +112,7 @@ class App extends Component {
                 data: calories_retained
             }]
         };
+
 
         const highchartOptions1 = {
             chart: {
@@ -202,11 +221,54 @@ class App extends Component {
             }]
         };
 
+        let ideal_consumed = 0;
+        let ideal_sleep = '';
+        let height = 0;
+        let weight = 0;
+        let gender = '';
+        let full_name = '';
+        let feet = 0;
+        let inches = 0;
+        let age = 0;
+        if(data.length > 0) {
+            height = data[data.length - 1]["Height"];
+            inches = height%10;
+            feet = String(height - height%10)[0];
+            full_name = data[data.length - 1]["First_Name"]+ " " + data[data.length - 1]["Last_Name"];
+            weight = data[data.length - 1]["Weight"];
+            gender = data[data.length - 1]["Gender"];
+            age = data[data.length - 1]["Age"]/1;
+            console.log(age);
+            ideal_consumed = 10 * weight * .453592 + 6.25 * (feet*12 + inches) * 2.54 - 5 * age + 5;
+            ideal_sleep = "11 to 14 hours";
+            if(age > 2){
+                ideal_sleep = "10 to 13 hours";
+                if(age > 5){
+                    ideal_sleep = "9 to 11 hours";
+                    if(age > 13){
+                        ideal_sleep = "8 to 10 hours";
+                        if(age > 17){
+                            ideal_sleep = "7 to 9";
+                            if(age > 25) {
+                                ideal_sleep =  "7 to 9";
+                                if(age > 64) {
+                                    ideal_sleep = "7 to 8 hours";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            console.log(ideal_sleep)
+        }
+
+
+
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">H E A L T H C A R E</h1>
+                    <h1 className="App-title">Good Morning, {full_name.split(" ")[0]}!</h1>
                 </header>
                 <div className="App-intro text-center">
                     <nav>
@@ -217,6 +279,8 @@ class App extends Component {
                                role="tab" aria-controls="nav-profile" aria-selected="false">Step Count</a>
                             <a className="nav-item nav-link" id="nav-sleep-tab" data-toggle="tab" href="#nav-sleep"
                                role="tab" aria-controls="nav-sleep" aria-selected="false">Sleep</a>
+                            <a className="nav-item nav-link" id="nav-prof-tab" data-toggle="tab" href="#nav-prof"
+                               role="tab" aria-controls="nav-prof" aria-selected="false">Profile</a>
                         </div>
                     </nav>
                     <div className="tab-content row d-flex justify-content-center" id="nav-tabContent">
@@ -230,6 +294,72 @@ class App extends Component {
                         </div>
                         <div className="tab-pane fade" id="nav-sleep" role="tabpanel" aria-labelledby="nav-sleep-tab">
                             <ReactHighcharts config={highchartOptions2}/>
+                        </div>
+                        <div className="tab-pane fade" id="nav-prof" role="tabpanel" aria-labelledby="nav-prof-tab">
+                            <div className="row justify-content-center">
+                                <div className="col-sm-3">
+                                    <div className="card border-primary">
+                                        <div className="card-body">
+                                            <h5 className="card-title">Calories Consumed</h5>
+                                            <p className="card-text">Your average consumed calories is {Math.round(avgConsumed)}. The recommended amount is {Math.round(ideal_consumed)}.</p>
+                                            <a href="#nav-home" data-toggle="tab" className="btn btn-primary" role="tab" aria-controls="nav-home">Check your data <i className="fa fa-arrow-up"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-3">
+                                    <div className="card border-dark">
+                                        <div className="card-body">
+                                            <h5 className="card-title">Sleep</h5>
+                                            <p className="card-text">Your average sleep time is {Math.round(avgSleep)}. Your ideal sleep average should be {ideal_sleep}.</p>
+                                            <a href="#nav-sleep" data-toggle="tab" className="btn btn-dark" role="tab" aria-controls="nav-sleep">Check your data <i className="fa fa-arrow-up"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='justify-content-center row'>
+                                <div className="col-xs-6">
+                                    <table className="text-left table table-borderless">
+                                        <tbody>
+                                        <tr>
+                                            <th scope="col">Full Name</th>
+                                            <td>{full_name}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Age</th>
+                                            <td>{age}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Gender</th>
+                                            <td>{gender === 'M' ? "Male" : "Female"}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Height</th>
+                                            <td>{feet + "'" + inches+"\""}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Weight</th>
+                                            <td>{weight}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Average Step Count</th>
+                                            <td>{Math.round(avgStep)}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Average Calories Consumed</th>
+                                            <td>{Math.round(avgConsumed)}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Average Calories Burned</th>
+                                            <td>{Math.round(avgBurned)}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Average Hours of Sleep</th>
+                                            <td>{Math.round(avgSleep)}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
