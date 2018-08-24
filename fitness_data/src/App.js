@@ -9,7 +9,8 @@ class App extends Component {
         super(props);
         this.state = {
             data: []
-        }
+        };
+        this.round = this.round.bind(this)
     }
 
     componentWillMount(){
@@ -18,6 +19,11 @@ class App extends Component {
             .then(response => response)
             .then((res) => res.json())
             .then(d => this.setState({data: d}))
+    }
+
+    round(value, precision) {
+        let multiplier = Math.pow(10, precision || 0);
+        return Math.round(value * multiplier) / multiplier;
     }
 
     render(){
@@ -92,7 +98,7 @@ class App extends Component {
 
             tooltip: {
                 formatter: function () {
-                    return '<b>' + this.x + '</b><br/>' +
+                    return '<b/' + this.x + '><br/>' +
                         this.series.name + ': ' + this.y + '<br/>' +
                         'Total Calorie Intake: ' + this.point.stackTotal;
                 }
@@ -230,6 +236,7 @@ class App extends Component {
         let feet = 0;
         let inches = 0;
         let age = 0;
+        let bmi = 0;
         if(data.length > 0) {
             height = data[data.length - 1]["Height"];
             inches = height%10;
@@ -240,26 +247,15 @@ class App extends Component {
             age = data[data.length - 1]["Age"]/1;
             console.log(age);
             ideal_consumed = 10 * weight * .453592 + 6.25 * (feet*12 + inches) * 2.54 - 5 * age + 5;
-            ideal_sleep = "11 to 14 hours";
-            if(age > 2){
-                ideal_sleep = "10 to 13 hours";
-                if(age > 5){
-                    ideal_sleep = "9 to 11 hours";
-                    if(age > 13){
-                        ideal_sleep = "8 to 10 hours";
-                        if(age > 17){
-                            ideal_sleep = "7 to 9";
-                            if(age > 25) {
-                                ideal_sleep =  "7 to 9";
-                                if(age > 64) {
-                                    ideal_sleep = "7 to 8 hours";
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            console.log(ideal_sleep)
+            bmi = 703 * weight/((feet*12 + inches)*(feet*12 + inches));
+            bmi = this.round(bmi, 2);
+            ideal_sleep = (age > 64 ? "7 to 8 hours"
+                : age > 25 ? "7 to 9"
+                    : age > 17 ? "7 to 9"
+                        : age > 13 ? "8 to 10"
+                            : age > 5 ? "9 to 11"
+                                : age > 2 ? "10 to 13"
+                                    : "11 to 14 hours");
         }
 
 
@@ -310,13 +306,22 @@ class App extends Component {
                                     <div className="card border-dark">
                                         <div className="card-body">
                                             <h5 className="card-title">Sleep</h5>
-                                            <p className="card-text">Your average sleep time is {Math.round(avgSleep)}. Your ideal sleep average should be {ideal_sleep}.</p>
+                                            <p className="card-text">Your average sleep time is {Math.round(avgSleep)} hours. Your ideal sleep average should be around {ideal_sleep} hours.</p>
                                             <a href="#nav-sleep" data-toggle="tab" className="btn btn-dark" role="tab" aria-controls="nav-sleep">Check your data <i className="fa fa-arrow-up"/></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className='justify-content-center row'>
+                            <div className='row justify-content-center' id='bmi-row'  style={{marginBottom: 0, paddingBottom: 0, marginTop: 0, paddingTop: 0 }}>
+                                <div className="col-sm-3 align-self-center"  style={{marginBottom: 0, paddingBottom: 0, marginTop: 0, paddingTop: 0 }}>
+                                    <div className="card border-0"  style={{marginBottom: 0, paddingBottom: 0, marginTop: 0, paddingTop: 0 }}>
+                                        <div className="card-body" style={{marginBottom: 0, paddingBottom: 0 }}>
+                                            <p  style={{marginBottom: 0, paddingBottom: 0}}>Your <b>BMI</b> is {bmi}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='tableaaaaa' className='justify-content-center row' style={{marginTop: 0, paddingTop: 0}}>
                                 <div className="col-xs-6">
                                     <table className="text-left table table-borderless">
                                         <tbody>
@@ -333,11 +338,11 @@ class App extends Component {
                                             <td>{gender === 'M' ? "Male" : "Female"}</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Height</th>
+                                            <th scope="row">Height (in)</th>
                                             <td>{feet + "'" + inches+"\""}</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Weight</th>
+                                            <th scope="row">Weight (lb)</th>
                                             <td>{weight}</td>
                                         </tr>
                                         <tr>
