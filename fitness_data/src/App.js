@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactHighcharts from'react-highcharts'; // Expects that Highcharts was loaded in the code.
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSpinner);
 
 class App extends Component {
 
@@ -80,7 +85,10 @@ class App extends Component {
             title: {
                 text: 'Calorie Intake Over Time'
             },
-
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+            },
             xAxis: {
                 categories: categories,
                 title: {
@@ -260,7 +268,7 @@ class App extends Component {
 
 
 
-        return (
+        return (this.state.data.length > 0 ? (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
@@ -369,7 +377,18 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-        );
+        )
+    :
+        (
+            <div className='container'>
+            <div className='row vertical-center-row'>
+            <div className="text-center col-sm-12 col-xs-offset-4 align-items-center justify-content-center">
+                <div className="loader"/>
+            </div>
+            </div>
+            </div>
+        )
+    );
     }
 }
 
